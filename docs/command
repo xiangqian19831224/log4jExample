@@ -1,0 +1,7 @@
+http://127.0.0.1:8080/log/debug
+http://127.0.0.1:8080/log/info
+http://127.0.0.1:8080/log/warn
+http://127.0.0.1:8080/log/error
+http://127.0.0.1:8080/log/other
+
+

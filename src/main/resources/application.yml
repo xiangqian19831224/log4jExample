@@ -1,0 +1,3 @@
+server:
+  name: log4jTest
+  port: 8080
