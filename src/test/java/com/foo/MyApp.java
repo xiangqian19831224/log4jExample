@@ -19,8 +19,8 @@ public class MyApp {
 
         logger.trace("Entering application.");
         logger.error("Error");
-        logger.error("Warn");
-        logger.error("Info");
+        logger.warn("Warn");
+        logger.info("Info");
         logger.debug("Debug");
 
 //        Bar bar = new Bar();
