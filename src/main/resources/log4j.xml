@@ -9,6 +9,20 @@
         </layout>
     </appender>
 
+    <!--输出到文件（debug）-->
+    <!--将生成“debug.log.2014-06-11”这样的日志文件-->
+    <appender name="fileAppenderDebug" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./logs/website/debug.log" />
+        <param name="DatePattern" value=".yyyy-MM-dd" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="DEBUG" />
+            <param name="LevelMax" value="DEBUG" />
+        </filter>
+    </appender>
+
     <!--输出到文件（info）-->
     <!--将生成“info.log.2014-06-11”这样的日志文件-->
     <appender name="fileAppenderInfo" class="org.apache.log4j.DailyRollingFileAppender">
@@ -50,14 +64,10 @@
         </filter>
     </appender>
 
-    <!--屏蔽所有org.springframework.*输出的Debug（及以下）信息-->
-    <logger name="org.springframework">
-        <level value="INFO"></level>
-    </logger>
-
     <root>
-        <level value="ALL"/>
+        <level value="DEBUG"/>
         <appender-ref ref="consoleAppender" />
+        <appender-ref ref="fileAppenderDebug" />
         <appender-ref ref="fileAppenderInfo" />
         <appender-ref ref="fileAppenderWarn" />
         <appender-ref ref="fileAppenderError" />
